@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+
+  &__left,
+  &__right,
+  &__nav-items {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
