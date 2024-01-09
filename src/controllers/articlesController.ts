@@ -3,7 +3,7 @@ import { Articles } from '../models/article'
 
 const index = (req: Request<{}, {}, {}, { q: string }>, res: Response) => {
   const { q } = req.query
-  const articles = Articles.getArticles({ search: q })
+  const articles = Articles.find({ search: q })
 
   res.render('articles', { articles })
 }
@@ -18,7 +18,7 @@ export type CreateArticle = {
 }
 
 const create = (req: Request<{}, {}, CreateArticle>, res: Response) => {
-  Articles.createArticle(req.body)
+  Articles.create(req.body)
   res.redirect('/articles')
 }
 

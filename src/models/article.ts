@@ -7,7 +7,7 @@ const articles = [
   { id: 3, title: 'How to cook a cupcake', content: 'This is my first article' },
 ]
 
-const getArticles = ({ search }: Record<string, any>) => {
+const find = ({ search }: Record<string, any>) => {
   if (search) {
     return articles.filter((article) => article.title.includes(search))
   }
@@ -15,7 +15,7 @@ const getArticles = ({ search }: Record<string, any>) => {
   return articles
 }
 
-const createArticle = (payload: CreateArticle) => {
+const create = (payload: CreateArticle) => {
   const newArticle = {
     ...payload,
     id: articles.length,
@@ -25,6 +25,6 @@ const createArticle = (payload: CreateArticle) => {
 }
 
 export const Articles = {
-  getArticles,
-  createArticle,
+  find,
+  create,
 }
