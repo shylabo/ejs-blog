@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import path from 'path'
 import expressEjsLayouts from 'express-ejs-layouts'
 import { router as articlesRouter } from './routes/articleRouter'
+import { router as authRouter } from './routes/authRouter'
 
 export const app = express()
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded())
 app.use(morgan('dev'))
 
 // Routers
+app.use('/auth', authRouter)
 app.use('/articles', articlesRouter)
 
 // Redirect
